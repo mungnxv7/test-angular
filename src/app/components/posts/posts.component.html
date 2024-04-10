@@ -1,0 +1,53 @@
+<div class="mt-10">
+  <h2 class="text-4xl font-bold border-b-2 py-2 border-black w-max mx-auto">
+    Posts
+  </h2>
+</div>
+<table class="w-full my-0 align-middle text-dark border-neutral-200 mt-10">
+  <thead class="align-bottom">
+    <tr class="font-semibold text-[0.95rem] text-secondary-dark">
+      <th class="pb-3 text-center min-w-[50px]">ID</th>
+      <th class="pb-3 text-center min-w-[175px]">Title</th>
+      <th class="pb-3 text-center min-w-[100px]">Body</th>
+      <th class="pb-3 text-center min-w-[100px]">Tags</th>
+      <th class="pb-3 pr-12 text-center">Reactions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      class="border-b border-dashed last:border-b-0"
+      *ngFor="let post of posts"
+    >
+      <td class="p-3 pr-0">
+        <span class="font-semibold text-light-inverse text-md/normal">{{
+          post.id
+        }}</span>
+      </td>
+      <td class="p-3 pr-0">
+        <span class="font-semibold text-light-inverse text-md/normal">{{
+          post.title
+        }}</span>
+      </td>
+
+      <td class="p-3 pr-12">
+        <span
+          class="text-center align-baseline inline-flex px-4 py-3 mr-auto items-center text-[.95rem] leading-none text-primary bg-primary-light rounded-lg"
+          >{{ post.body }}</span
+        >
+      </td>
+      <td class="p-3 flex items-center gap-1">
+        <span
+          *ngFor="let tag of post.tags"
+          class="text-center align-baseline inline-flex px-2 py-1 mr-auto items-center font-semibold text-base/none text-green-600 bg-green-400/50 rounded-lg"
+        >
+          {{ tag }}
+        </span>
+      </td>
+      <td class="pr-0 text-center">
+        <span class="font-semibold text-light-inverse text-md/normal">{{
+          post.reactions
+        }}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

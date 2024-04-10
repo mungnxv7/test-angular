@@ -1,0 +1,19 @@
+<div class="flex flex-col gap-4">
+  <div>
+    <img
+      class="w-[150px] h-[150px] mx-auto"
+      src="{{ product?.thumbnail }}"
+      alt=""
+    />
+  </div>
+  <div>
+    <div class="">
+      <h4 class="font-semibold text-nowrap overflow-hidden text-ellipsis">
+        {{ product?.title }}
+      </h4>
+      <p class="text-sm italic">{{ product?.category }}</p>
+    </div>
+    <p>{{ product?.price }}</p>
+  </div>
+  <button class="w-full py-2 rounded border border-black">Add to cart</button>
+</div>
